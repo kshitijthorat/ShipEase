@@ -16,6 +16,7 @@ Transport Management System API — manages users (customer/driver/manager) and 
 3. Run:
    - Dev: `npm run dev`
    - Prod: `npm start`
+   - Test: `npm test`
 
 ## Response format
 - Success: `{ "success": true, "data": ..., "message": "..." }`
@@ -35,6 +36,11 @@ Transport Management System API — manages users (customer/driver/manager) and 
 - `PUT /api/shipments/:id/accept` (driver)
 - `PUT /api/shipments/:id/status` (driver) — body: `{ status: "in-transit" | "delivered" }`
 
+### Role & Access Tests (require `Authorization: Bearer <token>`)
+- `GET /api/test/user-only` (any logged-in user)
+- `GET /api/test/manager-only` (manager only)
+- `GET /api/test/driver-manager` (driver or manager)
+
 ## Roles
 `customer | driver | manager`
 
@@ -42,3 +48,11 @@ Transport Management System API — manages users (customer/driver/manager) and 
 - JWT expiry: 7 days.
 - Rate limit on `/api/auth/*`: 20 requests / 15 min.
 - CORS restricted to `CLIENT_URL`.
+
+## Testing
+The backend uses `jest`, `supertest`, and `mongodb-memory-server` to run a comprehensive, isolated test suite without affecting your real database.
+
+To execute all 24 unit and integration test cases, simply run:
+```bash
+npm test
+```

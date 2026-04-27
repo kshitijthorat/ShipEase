@@ -48,15 +48,19 @@ app.use(errorHandler);
 
 // Start server
 const PORT = process.env.PORT || 5000;
-connectDB()
-  .then(() => {
-    app.listen(PORT, () => {
+if (process.env.NODE_ENV !== 'test') {
+  connectDB()
+    .then(() => {
+      app.listen(PORT, () => {
+        // eslint-disable-next-line no-console
+        console.log(`Server running on port ${PORT}`);
+      });
+    })
+    .catch((err) => {
       // eslint-disable-next-line no-console
-      console.log(`Server running on port ${PORT}`);
+      console.error('Failed to connect to DB', err);
+      process.exit(1);
     });
-  })
-  .catch((err) => {
-    // eslint-disable-next-line no-console
-    console.error('Failed to connect to DB', err);
-    process.exit(1);
-  });
+}
+
+module.exports = app;
