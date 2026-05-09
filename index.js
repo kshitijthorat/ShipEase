@@ -1,4 +1,7 @@
-require('dotenv').config();
+// Only load dotenv if not in test mode
+if (process.env.NODE_ENV !== 'test') {
+  require('dotenv').config();
+}
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -8,15 +11,30 @@ const rateLimit = require('express-rate-limit');
 const connectDB = require('./config/db');
 const apiRoutes = require('./routes');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
+const bookingRoutes = require("./routes/bookingRoutes");
 
 const app = express();
+const allowedOrigins = (process.env.CLIENT_URL || "")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
 // Core middleware
 app.use(helmet());
 app.use(express.json());
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || '*',
+    origin(origin, callback) {
+      if (!origin) return callback(null, true);
+      if (
+        allowedOrigins.length === 0 ||
+        allowedOrigins.includes(origin) ||
+        /^http:\/\/localhost:\d+$/.test(origin)
+      ) {
+        return callback(null, true);
+      }
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
@@ -41,6 +59,7 @@ app.get('/', (req, res) => {
 
 // API
 app.use('/api', apiRoutes);
+app.use("/api/bookings", bookingRoutes);
 
 // 404 + error handlers
 app.use(notFound);

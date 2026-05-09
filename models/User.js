@@ -17,6 +17,32 @@ const userSchema = new mongoose.Schema(
       enum: ['customer', 'driver', 'manager'],
       default: 'customer',
     },
+    isVerified: {
+      type: Boolean,
+      default: false,
+    },
+    otpCodeHash: {
+      type: String,
+      select: false,
+      default: null,
+    },
+    otpExpiresAt: {
+      type: Date,
+      select: false,
+      default: null,
+    },
+    otpLastSentAt: {
+      type: Date,
+      default: null,
+    },
+    otpAttempts: {
+      type: Number,
+      default: 0,
+    },
+    verifiedAt: {
+      type: Date,
+      default: null,
+    },
   },
   { timestamps: true }
 );

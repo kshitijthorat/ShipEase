@@ -14,19 +14,19 @@ describe('Shipment Endpoints', () => {
   let c1Token, c2Token, mToken, d1Token, d2Token;
 
   beforeEach(async () => {
-    customer1 = await User.create({ name: 'C1', email: 'c1@test.com', password: 'password', role: 'customer' });
+    customer1 = await User.create({ name: 'C1', email: 'c1@test.com', password: 'password', role: 'customer', isVerified: true });
     c1Token = signToken({ id: customer1._id, role: customer1.role });
 
-    customer2 = await User.create({ name: 'C2', email: 'c2@test.com', password: 'password', role: 'customer' });
+    customer2 = await User.create({ name: 'C2', email: 'c2@test.com', password: 'password', role: 'customer', isVerified: true });
     c2Token = signToken({ id: customer2._id, role: customer2.role });
 
-    manager = await User.create({ name: 'M1', email: 'm1@test.com', password: 'password', role: 'manager' });
+    manager = await User.create({ name: 'M1', email: 'm1@test.com', password: 'password', role: 'manager', isVerified: true });
     mToken = signToken({ id: manager._id, role: manager.role });
 
-    driver1 = await User.create({ name: 'D1', email: 'd1@test.com', password: 'password', role: 'driver' });
+    driver1 = await User.create({ name: 'D1', email: 'd1@test.com', password: 'password', role: 'driver', isVerified: true });
     d1Token = signToken({ id: driver1._id, role: driver1.role });
 
-    driver2 = await User.create({ name: 'D2', email: 'd2@test.com', password: 'password', role: 'driver' });
+    driver2 = await User.create({ name: 'D2', email: 'd2@test.com', password: 'password', role: 'driver', isVerified: true });
     d2Token = signToken({ id: driver2._id, role: driver2.role });
   });
 

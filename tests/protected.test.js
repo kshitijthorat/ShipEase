@@ -12,13 +12,13 @@ describe('Protected Routes', () => {
   let customerToken, managerToken, driverToken;
 
   beforeEach(async () => {
-    const customer = await User.create({ name: 'Customer', email: 'cust@test.com', password: 'password', role: 'customer' });
+    const customer = await User.create({ name: 'Customer', email: 'cust@test.com', password: 'password', role: 'customer', isVerified: true });
     customerToken = signToken({ id: customer._id, role: customer.role });
 
-    const manager = await User.create({ name: 'Manager', email: 'mgr@test.com', password: 'password', role: 'manager' });
+    const manager = await User.create({ name: 'Manager', email: 'mgr@test.com', password: 'password', role: 'manager', isVerified: true });
     managerToken = signToken({ id: manager._id, role: manager.role });
 
-    const driver = await User.create({ name: 'Driver', email: 'drv@test.com', password: 'password', role: 'driver' });
+    const driver = await User.create({ name: 'Driver', email: 'drv@test.com', password: 'password', role: 'driver', isVerified: true });
     driverToken = signToken({ id: driver._id, role: driver.role });
   });
 

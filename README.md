@@ -50,7 +50,14 @@ Transport Management System API — manages users (customer/driver/manager) and 
 - CORS restricted to `CLIENT_URL`.
 
 ## Testing
-The backend uses `jest`, `supertest`, and `mongodb-memory-server` to run a comprehensive, isolated test suite without affecting your real database.
+The backend test setup supports two modes:
+
+- Preferred on restricted environments: real Mongo connection via `TEST_MONGO_URI` (or `MONGO_URI`) with `TEST_DB_NAME=shipease_test`
+- Fallback: `mongodb-memory-server` if no test URI is provided
+
+Important safety behavior:
+- Test cleanup runs only on the `shipease_test` database by default.
+- It refuses to wipe any other DB name.
 
 To execute all 24 unit and integration test cases, simply run:
 ```bash
