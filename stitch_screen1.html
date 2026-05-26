@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#006e2f",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191b23",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "secondary-container": "#6bff8f",
+                        "on-tertiary-container": "#ffede6",
+                        "secondary-fixed-dim": "#4ae176",
+                        "on-surface-variant": "#434655",
+                        "on-secondary-fixed-variant": "#005321",
+                        "surface-container-highest": "#e1e2ed",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-error": "#ffffff",
+                        "primary-container": "#2563eb",
+                        "surface-container-high": "#e7e7f3",
+                        "surface-tint": "#0053db",
+                        "error": "#ba1a1a",
+                        "primary": "#004ac6",
+                        "on-primary": "#ffffff",
+                        "outline": "#737686",
+                        "outline-variant": "#c3c6d7",
+                        "on-primary-container": "#eeefff",
+                        "on-primary-fixed": "#00174b",
+                        "background": "#faf8ff",
+                        "tertiary-container": "#bc4800",
+                        "on-background": "#191b23",
+                        "on-secondary-fixed": "#002109",
+                        "surface-container-low": "#f3f3fe",
+                        "surface": "#faf8ff",
+                        "secondary-fixed": "#6bff8f",
+                        "inverse-surface": "#2e3039",
+                        "surface-dim": "#d9d9e5",
+                        "inverse-primary": "#b4c5ff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-bright": "#faf8ff",
+                        "tertiary": "#943700",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#ededf9",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#360f00",
+                        "surface-variant": "#e1e2ed",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-secondary-container": "#007432",
+                        "inverse-on-surface": "#f0f0fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"], "h1": ["Inter"], "h2": ["Inter"], "display": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "h3": ["Inter"], "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "h1": ["30px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-screen w-64 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-4 space-y-2 sticky top-0">
+<div class="px-4 py-6 mb-4">
+<h1 class="text-2xl font-black text-blue-600 dark:text-blue-500">ShipEase</h1>
+<p class="text-xs text-slate-500 font-medium">Logistics Management</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-lg font-semibold transition-all hover:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all hover:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-md text-label-md">Shipments</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all hover:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Fleet</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all hover:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all hover:translate-x-1 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="badge">badge</span>
+<span class="font-label-md text-label-md">Team</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-4 space-y-1">
+<button class="w-full bg-primary text-on-primary py-3 px-4 rounded-xl font-semibold flex items-center justify-center gap-2 mb-4 hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Create Shipment
+            </button>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 flex justify-between items-center w-full px-6 py-3 z-40 sticky top-0 shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm focus:ring-2 focus:ring-blue-500 transition-all" placeholder="Track shipment ID..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-700 mx-2"></div>
+<div class="flex items-center gap-3">
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full border border-slate-200" data-alt="A professional headshot of a middle-aged man with short dark hair and a confident smile, set against a blurred corporate office background. The lighting is soft and natural, emphasizing a clean and approachable professional persona. The overall aesthetic is high-key and modern, aligning with a light-mode user interface for a premium logistics platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARiGYtS5e05gWNeqXDOo_v0FwrvLAO8KcYiAh0xqSmbedGmeSmRVpJ8CsJUGu2GUJUXI-_evoz6skxZbMKHy2C9FETQbRwrgK40dZX77QKswc-XODdTUTwaWjTJ-gKLuPTggU_APWyWN_af9GZ8zVTW3cggJUKqDUj9N3AQx5j2S7p0w7BPxzKyIqE91VFgVBQ-iQlXfJwKpNWb1AcrSSmFy3YF8T-gNSC665E9uQMvJrddJM0BnPXaq1B33Qqb8xpsz41Nh5TnJY"/>
+<span class="text-sm font-semibold text-slate-700 hidden sm:inline">Alex Marshall</span>
+</div>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<div class="p-6 md:p-10 space-y-8">
+<!-- Welcome Section -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-display text-display text-on-surface">Welcome back, Alex</h2>
+<p class="font-body-md text-body-md text-slate-500 mt-1">Your fleet is moving smoothly. Here is what's happening today.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 border border-outline-variant rounded-lg text-label-md font-label-md text-on-surface-variant hover:bg-slate-50 transition-colors">Download Reports</button>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg text-label-md font-label-md hover:opacity-90 transition-opacity shadow-sm">View Schedule</button>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-5">
+<div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined text-3xl" data-icon="inventory_2">inventory_2</span>
+</div>
+<div>
+<p class="text-slate-500 font-label-sm text-label-sm uppercase tracking-wider">Total Shipments</p>
+<h3 class="text-3xl font-bold text-on-surface">1,284</h3>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-5">
+<div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="local_shipping">local_shipping</span>
+</div>
+<div>
+<p class="text-slate-500 font-label-sm text-label-sm uppercase tracking-wider">Active Deliveries</p>
+<h3 class="text-3xl font-bold text-on-surface">24</h3>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-5">
+<div class="w-12 h-12 rounded-xl bg-orange-50 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="location_on">location_on</span>
+</div>
+<div>
+<p class="text-slate-500 font-label-sm text-label-sm uppercase tracking-wider">Saved Addresses</p>
+<h3 class="text-3xl font-bold text-on-surface">42</h3>
+</div>
+</div>
+</section>
+<!-- Main Features Split -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<!-- Active Shipments List -->
+<section class="xl:col-span-2 space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-h3 text-h3 text-on-surface">Active Shipments</h3>
+<a class="text-primary font-label-md text-label-md hover:underline" href="#">View All</a>
+</div>
+<div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 border-b border-slate-100">
+<tr>
+<th class="px-6 py-4 font-label-sm text-label-sm text-slate-500 uppercase">Tracking ID</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-slate-500 uppercase">Destination</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-slate-500 uppercase">Status</th>
+<th class="px-6 py-4 font-label-sm text-label-sm text-slate-500 uppercase">ETA</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50">
+<tr class="hover:bg-slate-50 transition-colors cursor-pointer group">
+<td class="px-6 py-4 font-label-md text-label-md text-blue-600 font-bold">#SHP-90210</td>
+<td class="px-6 py-4">
+<div class="text-on-surface font-medium">Los Angeles, CA</div>
+<div class="text-xs text-slate-400">Terminal 4 Warehouse</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 mr-1.5"></span>
+                                                In Transit
+                                            </span>
+</td>
+<td class="px-6 py-4 text-on-surface-variant font-medium">Today, 4:00 PM</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors cursor-pointer group">
+<td class="px-6 py-4 font-label-md text-label-md text-blue-600 font-bold">#SHP-88312</td>
+<td class="px-6 py-4">
+<div class="text-on-surface font-medium">Austin, TX</div>
+<div class="text-xs text-slate-400">Hub Central North</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-green-50 text-secondary text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mr-1.5"></span>
+                                                Out for Delivery
+                                            </span>
+</td>
+<td class="px-6 py-4 text-on-surface-variant font-medium">In 2 hours</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors cursor-pointer group">
+<td class="px-6 py-4 font-label-md text-label-md text-blue-600 font-bold">#SHP-77219</td>
+<td class="px-6 py-4">
+<div class="text-on-surface font-medium">Chicago, IL</div>
+<div class="text-xs text-slate-400">South Side Distribution</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400 mr-1.5"></span>
+                                                Processing
+                                            </span>
+</td>
+<td class="px-6 py-4 text-on-surface-variant font-medium">Tomorrow</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Live Tracking Map Widget -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-h3 text-h3 text-on-surface">Live Tracker</h3>
+<span class="text-secondary font-semibold text-xs flex items-center gap-1">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+</span>
+                            Live
+                        </span>
+</div>
+<div class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden flex flex-col h-[400px]">
+<div class="flex-1 relative bg-slate-100">
+<img class="w-full h-full object-cover grayscale opacity-60" data-alt="A clean, minimalist satellite map view of an urban coastal city with simplified vector lines representing main highways and transit routes. A bright blue illuminated path highlights a logistics route between two points marked by modern geometric icons. The aesthetic is professional and high-tech, using a desaturated palette with vibrant blue accents to indicate movement and active data tracking within a logistics dashboard." data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI342Jub4oLuz3yFxfV2I1d6KDCgXAYv8eM14C7uVmr_OBgeWYjbEMIqD9oiI9BfOb203i2FtoAMceEnGPRPPEhnR1sOlMsnOo0qn1TVgN_C_kZ9OHsrZb04dbDyEOMlKgJZjPo7pUSEHKpS47zPyEOAonzJ6SnJPvy8XXjG4Deg3eFS5iEqS2VPOgLVjdfLwyDqbNanFuc65F64UYZtTKTUYa3hadCrPV_s0MPjW5cQRNBfkk5bKDqScZ6FDS1lpUb1pcwon-xt4"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative w-full h-full p-10">
+<div class="absolute top-1/4 left-1/4 w-4 h-4 bg-primary border-4 border-white rounded-full shadow-lg"></div>
+<div class="absolute bottom-1/4 right-1/4 w-4 h-4 bg-secondary border-4 border-white rounded-full shadow-lg"></div>
+<svg class="absolute inset-0 w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M25,25 Q50,25 50,50 T75,75" fill="none" stroke="#004ac6" stroke-dasharray="5,5" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<div class="p-4 bg-white border-t border-slate-100">
+<div class="flex justify-between items-center">
+<div>
+<p class="text-xs text-slate-400 font-medium">Tracking Package</p>
+<p class="text-sm font-bold text-on-surface">#SHP-90210</p>
+</div>
+<div class="text-right">
+<p class="text-xs text-slate-400 font-medium">Moving at</p>
+<p class="text-sm font-bold text-secondary">65 mph</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- New Shipment FAB -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-50 group">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add" style="font-variation-settings: 'FILL' 0, 'wght' 700;">add</span>
+<span class="absolute right-full mr-4 bg-secondary text-white px-3 py-1 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-sm pointer-events-none">New Shipment</span>
+</button>
+</body></html>
