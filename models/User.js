@@ -43,6 +43,35 @@ const userSchema = new mongoose.Schema(
       type: Date,
       default: null,
     },
+    phone: {
+  type: String,
+  default: "",
+},
+
+vehicleType: {
+  type: String,
+  default: "",
+},
+
+vehicleNumber: {
+  type: String,
+  default: "",
+},
+
+licenseNumber: {
+  type: String,
+  default: "",
+},
+
+isApproved: {
+  type: Boolean,
+  default: true,
+},
+
+isOnline: {
+  type: Boolean,
+  default: false,
+},
   },
   { timestamps: true }
 );
